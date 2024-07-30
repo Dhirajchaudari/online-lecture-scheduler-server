@@ -17,6 +17,7 @@ const app = Fastify({
   logger: false,
 });
 
+
 async function startServer() {
   try {
     await connectToDB();
