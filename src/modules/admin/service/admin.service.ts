@@ -118,6 +118,7 @@ class AdminService {
         }
       );
 
+      
       // create jwt
       const token = signJwt({
         role: user.role,
