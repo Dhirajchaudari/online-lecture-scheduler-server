@@ -111,7 +111,7 @@ class AdminService {
                     httpOnly: true,
                     sameSite: "none",
                     secure: true,
-                    domain: `https://online-lecture-scheduler-client.vercel.app/`,
+                    domain: `.vercel.app`,
                     path: "/",
                 });
             }
