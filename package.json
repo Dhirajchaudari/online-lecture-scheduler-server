@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "npm install rimraf",
+    "prebuild": "npm install",
     "compile": "tsc",
     "build": "rimraf ./dist && tsc",
     "start": "node ./dist/index.js",
