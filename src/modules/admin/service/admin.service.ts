@@ -131,7 +131,7 @@ class AdminService {
           httpOnly: true,
           sameSite: "none",
           secure: true,
-          domain: `.choosepos.com`,
+          domain: `.vercel.app`,
           path: "/",
         });
       } else {
@@ -153,7 +153,7 @@ class AdminService {
         httpOnly: true,
         sameSite: "none",
         secure: true,
-        domain: `.choosepos.com`,
+        domain: `.vercel.app`,
         path: "/",
         expires: new Date(0),
       });

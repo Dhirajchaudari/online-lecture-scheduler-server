@@ -37,6 +37,7 @@ async function startServer() {
     // Register CORS plugin
     await app.register(cors, {
       origin: [
+        "https://online-lecture-scheduler-client.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:5000",
