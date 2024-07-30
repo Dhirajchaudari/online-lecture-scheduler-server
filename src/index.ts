@@ -93,10 +93,12 @@ async function startServer() {
       reply.send(error);
     });
 
-    await app.listen({
-      host: "0.0.0.0",  // Listen on all network interfaces
-      port: 4000
-    });
+const port = parseInt(process.env.PORT || "4000", 10);
+await app.listen({
+  port,
+  host: "0.0.0.0", // Bind to all network interfaces
+});
+
     console.log(`Server started on http://localhost:${process.env.PORT} 🚀`);
   } catch (error: any) {
     console.error(error.message);
