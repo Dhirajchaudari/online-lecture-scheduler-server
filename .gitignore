@@ -2,10 +2,10 @@
 /node_modules
 /.pnp
 .pnp.js
-# /dist
+/dist
 .env
-# /deploys
-# deploy*.zip
+/deploys
+deploy*.zip
 
 # Editors
 .idea
