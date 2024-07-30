@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "build": "rimraf ./dist && tsc && cpx \"./src/emails/**/*\" ./dist/emails --clean",
+    "build": "rimraf ./dist && tsc",
     "start": "node ./dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
