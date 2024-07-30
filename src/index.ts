@@ -93,7 +93,10 @@ async function startServer() {
       reply.send(error);
     });
 
-    await app.listen({ port: 4000 });
+    await app.listen({
+      host: "0.0.0.0",  // Listen on all network interfaces
+      port: 4000
+    });
     console.log(`Server started on http://localhost:${process.env.PORT} 🚀`);
   } catch (error: any) {
     console.error(error.message);
