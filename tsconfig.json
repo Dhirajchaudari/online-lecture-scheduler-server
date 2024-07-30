@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-    //   "rootDirs": ["src"],
+      "rootDirs": ["./src"],
       "outDir": "./dist",
       "lib": ["es2020", "esnext.asynciterable"],
       "target": "es2020",
