@@ -5,7 +5,7 @@ import { buildTypeDefsAndResolvers } from "type-graphql";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import Fastify from "fastify";
 import mercurius from "mercurius";
-import { resolvers as typedResolvers } from "./resolvers/index.resolver"
+import { resolvers as typedResolvers } from "./resolvers/index.resolver";
 import cors from "@fastify/cors";
 import cookie from "@fastify/cookie";
 import Context from "./utils/context";
@@ -17,7 +17,6 @@ const app = Fastify({
   logger: false,
 });
 
-
 async function startServer() {
   try {
     await connectToDB();
@@ -28,7 +27,7 @@ async function startServer() {
 
     const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-    // Register Rate Limitter
+    // Register Rate Limiter
     await app.register(import("@fastify/rate-limit"), {
       max: 100,
       timeWindow: 1000 * 60,
@@ -36,12 +35,7 @@ async function startServer() {
 
     // Register CORS plugin
     await app.register(cors, {
-      origin: [
-        "https://online-lecture-scheduler-client.vercel.app",
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:5000",
-      ],
+      origin: true, // Allow all origins
       methods: ["GET", "POST"],
       credentials: true,
     });
@@ -95,11 +89,11 @@ async function startServer() {
       reply.send(error);
     });
 
-const port = parseInt(process.env.PORT || "4000", 10);
-await app.listen({
-  port,
-  host: "0.0.0.0", // Bind to all network interfaces
-});
+    const port = parseInt(process.env.PORT || "4000", 10);
+    await app.listen({
+      port,
+      host: "0.0.0.0", // Bind to all network interfaces
+    });
 
     console.log(`Server started on http://localhost:${process.env.PORT} 🚀`);
   } catch (error: any) {
